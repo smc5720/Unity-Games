@@ -1,3 +1,0 @@
-a~b duration
-
-a¿Í bÀÇ Â÷ * delta time * duration
