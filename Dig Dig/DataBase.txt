@@ -1,0 +1,5 @@
+DB연동
+- 무기 레벨		(fToolLevel)
+- 현재 체력		(fCurrentHP)
+- 코인		(nCoin)
+- 레벨		(nLevel)

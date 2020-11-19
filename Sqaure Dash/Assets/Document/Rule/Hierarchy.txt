@@ -1,0 +1,70 @@
+HOMI Unity Basic Ver1.0 (14.04.03)
+--------------------------------
+        공통사항
+
+* 변수를 제외한 무엇이든 생성 시 첫 글자는 영어 대문자 하기
+* 두가지 이상 단어가 들어갈 시에는 단어 시작마다 대문자를 사용
+* 아래와 같이 구성(예시)
+--------------------------------
+ - Monster
+ - MonsterDie
+
+
+--------------------------------
+        Hierarchy 기본 구성
+
+* Game Camera 레이어 구성한다.
+* Popup Camera 레이어 구성한다.
+  (Game Camera 레이어와 다른 이름으로 한다.)
+* 아래와 같이 구성
+--------------------------------
+ - 0_Mngs        <- 첫번째 씬에서만 생성
+ - Game          <- 게임 씬에서만 생성
+   - Game Camera    <- 게임 씬에서만 생성
+ - Root_Ⅰ
+   - 2D Camera
+     - 0_Top_Left
+     - 1_Top_Center
+     - 2_Top_Right
+     - 3_Center_Left
+     - 4_Center_Center
+     - 5_Center_Right
+     - 6_Bottom_Left
+     - 7_Bottom_Center
+     - 8_Bottom_Right
+   - SceneMng
+ - Root_Ⅱ
+   - Popup Camera
+     - 0_Center_Center
+       - PopupOffset
+--------------------------------
+
+--------------------------------
+        해상도 구성
+
+* Root_Ⅰ 과 Root_Ⅱ 에 FixResolution스크립트를 포함시킨다.
+* Camera에 각 Root 해당하는 카메라를 드래그 하여 넣어준다.
+* Width에 원하는 해상도 너비를 넣어준다.
+* Height에 원하는 해상도 높이를 넣어준다.
+* Ratio Width에 입력한 해상도 너비 비율을 넣어준다.
+* Ratio Height에 입력한 해상도 높이 비율을 넣어준다.
+--------------------------------
+ 
+
+--------------------------------
+        Offset 구성
+
+* 생성될 프리팹의 위치를 정한뒤 가장 가까운
+  Anchor 하위에 Offset을 생성한다.
+* Offset 생성은 빈게임오브젝트 이다.
+* Offset 이름은 생성될 프리팹 이름 뒤에
+  Offset을 붙여 준다.
+* 아래와 같이 구성
+--------------------------------
+ - 0_Mngs        <- 첫번째 씬에서만 생성
+ - Game          <- 게임 씬에서만 생성
+   - Game Camera    <- 게임 씬에서만 생성
+ - Root_Ⅰ
+   - 2D Camera
+     - 0_Top_Left
+       - CharInfoPrefabOffset

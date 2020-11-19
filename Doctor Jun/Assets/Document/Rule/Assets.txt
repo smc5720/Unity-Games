@@ -1,0 +1,193 @@
+HOMI Unity Basic Ver1.0 (14.04.03)
+--------------------------------
+        공통사항
+
+* 변수를 제외한 무엇이든 생성 시 첫 글자는 영어 대문자 하기
+* 두가지 이상 단어가 들어갈 시에는 단어 시작마다 대문자를 사용
+* 아래와 같이 구성(예시)
+--------------------------------
+ - Monster
+ - MonsterDie
+
+
+--------------------------------
+        Asset 폴더 구성
+
+* 아래와 같이 구성
+--------------------------------
+ - Document
+ - Resources
+ - Scenes
+ - 각종 추가 패키치(NGUI등)
+--------------------------------
+
+--------------------------------
+        Scenes 폴더 구성
+
+* 씬이 진행 되는 순서대로 번호를 정해준다.
+* 씬 이동이 순서가 순차가 아닌 2가지 이상으로
+  나눠어 지게 될 경우 개발자 임의로 순서를 정해도 무관
+* 씬이름 뒤에는 Scene을 붙인다.
+* 아래와 같이 구성
+--------------------------------
+ - Scenes
+   - 1_LogoScene
+   - 2_LobbyScene
+   - 3_GameScene
+   - 4_GameOverScene
+--------------------------------
+
+--------------------------------
+        Resources 폴더 구성
+
+* 폴더 앞에 0부터 하나씩 증가 시키 만든다.
+* 0번째 폴더는 0_Common 으로 통일한다.
+* 0_Common 이후 폴더는 Scene이름을 넣어준다.
+* 아래와 같이 구성한다.(씬이름은 예시임)
+--------------------------------
+ - Resources
+   - 0_Common
+   - 1_LogoScene
+   - 2_LobbyScene
+   - 3_GameScene
+   - 4_GameOverScene
+
+--------------------------------
+   Resources 안에 씬 폴더 구성
+
+* 0_Common 폴더를 포함 모든 씬 폴더 안의 폴더 구성은 통일한다.
+* 아래와 같이 구성
+--------------------------------
+ - Resources
+   - 0_Common
+     - 0_Atlases
+     - 1_Prefabs
+     - 2_Scripts
+     - 3_Animations
+     - 4_Fonts
+     - 5_Sounds
+       - BGMs
+       - Effects
+     - 6_Textures
+     - 7_Shader
+   - 1_Logo
+     - 위와 동일
+
+--------------------------------
+   씬 폴더 안에 Atlases 구성
+
+* 폴더를 생성 후 하위에 Atlas를 생성 한다.
+* 폴더이름은 개발자가 원하는 이름으로 지정.
+* Atlas이름은 폴더 이름 뒤에 Atlas를 추가한다.
+* 아래와 같이 구성(예시)
+--------------------------------
+ - Resources
+   - 0_Common
+     - 0_Atlases
+       - BackImg
+         - BackImgAtlas
+       - Warring
+         - WarringAtlas
+
+--------------------------------
+   씬 폴더 안에 Prefabs 구성
+
+* 폴더를 생성 후 하위에 Prefab을 생성 한다.
+* 폴더 이름은 Prefab의 연관성 묶어 정해준다.
+* Prefab 이름 뒤에는 Prefab을 붙여준다.
+* 아래와 같이 구성(예시)
+--------------------------------
+ - Resources
+   - 0_Common
+     - 1_Prefabs
+       - Character
+         - SuperManPrefab
+         - BetManPrefab
+         - UltraManPrefab
+       - Warring
+         - WarringPrefab
+
+
+--------------------------------
+   씬 폴더 안에 Script 구성
+
+* 폴더를 생성후 Script을 생성 한다.
+* 폴더 이름은 Script 연관성 묶어 정해준다.
+* Script이름은 자유롭게 한다.
+* 통틀어 관리 해주는 Script경우에은 이름 뒤에 Mng를 붙여준다.
+* Button 관리 해주는 Script경우에은 이름 뒤에 Btn를 붙여준다.
+* 아래와 같이 구성(예시)
+--------------------------------
+ - Resources
+   - 0_Common
+     - 2_Scripts
+       - Character
+         - MoveControl.cs
+         - CharacterMng.cs
+       - UI
+         - CharInfo
+           - ShowCharInfo.cs
+           - DestroyCharInfo.cs
+		   - CreateWeaponBtn.cs
+         - MonsterInfo
+           - ShowMonsterInfo.cs
+           - DestroyMonsterInfo.cs
+
+
+--------------------------------
+   씬 폴더 안에 Animations 구성
+
+* 폴더를 생성후 Animation을 생성 한다.
+* 폴더 이름은 Animation 연관성 묶어 정해준다.
+* Animation 이름 뒤에는 Ani을 붙여준다.
+* 아래와 같이 구성(예시)
+--------------------------------
+ - Resources
+   - 0_Common
+     - 3_Animations
+       - Character
+         - CharacterDieAni
+       - UI
+         - CreateUIAni
+
+--------------------------------
+   씬 폴더 안에 Fonts 구성
+
+* 폴더를 생성 후 하위에 Fonts을 생성 한다.
+* 폴더 이름은 Font의 연관성 묶어 정해준다.
+* Font 이름 뒤에는 Font을 붙여준다.
+* 아래와 같이 구성(예시)
+--------------------------------
+ - Resources
+   - 0_Common
+     - 1_Prefabs
+       - Kor
+         - KorFont
+
+--------------------------------
+   씬 폴더 안에 Sounds 구성
+
+* 폴더를 생성 후 하위에 Sound을 생성 한다.
+* 폴더 이름은 Sound의 연관성 묶어 정해준다.
+* BGM 이름은 씬이름 + BGM 으로 한다.
+* Effect 이름은 소리나는 주체(Prefab이름)를 앞에 넣어준뒤 발생 이벤트 이름을 뒤에 붙인다.
+* 아래와 같이 구성(예시)
+--------------------------------
+ - Resources
+   - 1_Logo
+     - 5_Sounds
+       - BGMs
+         - Logo1BGM
+         - Logo2BGM
+       - Effects
+         - Character
+           - CharacterDie
+           - CharacterAttack
+           - CharacterWalk
+         - Monster
+           - MonsterWin
+           - MonsterDie
+         - UI
+           - Life
+             - LifeIncrease
+             - LifeDecrease
